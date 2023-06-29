@@ -1,0 +1,16 @@
+<ng-container *ngIf="dataSource$ | async as tableData">
+  <div class="d-flex justify-content-center">
+    <table *ngIf="tableData.length" class="col-12 p-2 m-0 text-center border-1" data-testId="history-table">
+      <tr class="border-1">
+        <th class="border-1 px-4 fw-">Time</th>
+        <th class="border-1 px-4">Operation</th>
+        <th class="border-1 px-4">Result</th>
+      </tr>
+      <tr *ngFor="let data of tableData" class="border-1">
+        <th class="border-1 font-monospace fw-light">{{data.time}}</th>
+        <th class="border-1 font-monospace fw-light">{{data.operation}}</th>
+        <th class="border-1 font-monospace fw-light">{{data.result}}</th>
+      </tr>
+    </table>
+  </div>
+</ng-container>
